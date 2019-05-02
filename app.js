@@ -1,13 +1,13 @@
 const fs = require('fs');
 
 let base = 2;
-
+let data = '';
 for (let index = 1; index < 10; index++) {
     let element = base * index;
-    console.log(`${ index } * ${ base } = ${ element }`);
+    data += `${ index } * ${ base } = ${ element }\n`;
 }
 
-fs.writeFile('message.txt', 'hello node js', err => {
+fs.writeFile('tablas/tablaMulti.txt', data, err => {
     if (err) throw err;
     console.log('the file has been saved');
 
