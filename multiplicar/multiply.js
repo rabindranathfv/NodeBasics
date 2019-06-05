@@ -1,4 +1,5 @@
 const fs = require('fs');
+const colors = require('colors');
 
 let listTable = (base, limit) => {
     return new Promise( (resolve, reject) => {
@@ -10,7 +11,7 @@ let listTable = (base, limit) => {
                 let element = base * index;
                 data += `${ index } * ${ base } = ${ element }\n`;
             }
-            resolve(data);
+            resolve(data.blue);
         }
     });
 }
@@ -29,7 +30,7 @@ let createFile = (base, limit) => {
                 if (err)
                     reject(err);
                 else
-                    resolve(`tablaMulti-${base}-${limit}.txt`);
+                    resolve(`tablaMulti-${base}-${limit}.txt`.green);
             });
         } else {
             reject(`la base no es un numero`);
