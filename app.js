@@ -1,14 +1,7 @@
-const fs = require('fs');
+// const multiply = require('./multiplicar/multiply');
+const { createFile } = require('./multiplicar/multiply');
+let base = '22';
 
-let base = 2;
-let data = '';
-for (let index = 1; index < 10; index++) {
-    let element = base * index;
-    data += `${ index } * ${ base } = ${ element }\n`;
-}
 
-fs.writeFile('tablas/tablaMulti.txt', data, err => {
-    if (err) throw err;
-    console.log('the file has been saved');
-
-});
+createFile(base).then(file => console.log(`archivo creado ${file}`))
+    .catch(e => console.log(e));
