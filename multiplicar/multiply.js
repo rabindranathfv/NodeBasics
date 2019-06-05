@@ -15,21 +15,21 @@ let listTable = (base, limit) => {
     });
 }
 
-let createFile = (base) => {
+let createFile = (base, limit) => {
     return new Promise((resolve, reject) => {
 
         if (typeof(base) === 'number') {
             let data = '';
-            for (let index = 1; index < 10; index++) {
+            for (let index = 1; index <= limit; index++) {
                 let element = base * index;
                 data += `${ index } * ${ base } = ${ element }\n`;
             }
 
-            fs.writeFile(`tablas/tablaMulti-${base}.txt`, data, err => {
+            fs.writeFile(`tablas/tablaMulti-${base}-${limit}.txt`, data, err => {
                 if (err)
                     reject(err);
                 else
-                    resolve(`tablaMulti-${base}.txt`);
+                    resolve(`tablaMulti-${base}-${limit}.txt`);
             });
         } else {
             reject(`la base no es un numero`);

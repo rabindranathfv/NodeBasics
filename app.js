@@ -9,6 +9,16 @@ const argv = require('yargs')
             default: 10
         }
     })
+    .command('create', 'create table by using base and lmit', {
+        base: {
+            demand: true,
+            alias: 'b'
+        },
+        limit: {
+            alias: 'l',
+            default: 10
+        }
+    })
     .help()
     .argv;
 // executara de la forma node app list -b <value>
@@ -19,14 +29,12 @@ let command = argv._[0];
 
 switch (command) {
     case 'list':
-        console.log('listar');
         listTable(argv.base, argv.limit).then( table => {
             console.log(table);
         }).catch( e => console.log(e));
         break;
     case 'create':
-        console.log('crear');
-        createFile(argv.base).then(file => console.log(`archivo creado ${file}`))
+        createFile(argv.base, argv.limit).then(file => console.log(`archivo creado ${file}`))
                 .catch(e => console.log(e));
         break;
 
