@@ -8,13 +8,14 @@ let command = argv._[0];
 switch(command) {
     case 'create':
         console.log('create a todo TASK'.blue);
-
         break;
     case 'list':
         console.log('List of Todos '.blue);
-
+        break;
+    case 'update':
+        console.log('Update a task'.blue);
         break;
     default:
-        console.log('Default options'.blue);
+        console.log('Not an existing command'.blue);
         break;
 }
