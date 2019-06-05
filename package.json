@@ -1,0 +1,22 @@
+{
+  "name": "nodebasics",
+  "version": "1.0.0",
+  "description": "node Basics processing argvs into some basic stuff",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabindranathfv/NodeBasics.git"
+  },
+  "author": "Rabindranath Ferreira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rabindranathfv/NodeBasics/issues"
+  },
+  "homepage": "https://github.com/rabindranathfv/NodeBasics#readme",
+  "dependencies": {
+    "yargs": "^13.2.4"
+  }
+}
