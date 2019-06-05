@@ -17,7 +17,7 @@ let createFile = (base) => {
                     resolve(`tablaMulti-${base}.txt`);
             });
         } else {
-            reject(`no es un numero`);
+            reject(`la base no es un numero`);
             return;
         }
 
