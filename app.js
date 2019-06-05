@@ -1,17 +1,20 @@
 const argv = require('yargs')
     .command('list', 'table of multiply using nodeJs', {
         base: {
-            demand: true
+            demand: true,
+            alias: 'b'
+        },
+        limit: {
+            alias: 'l',
+            default: 10
         }
     })
     .argv;
+// executara de la forma node app list -b <value>
 // const multiply = require('./multiplicar/multiply');
 const { createFile } = require('./multiplicar/multiply');
 
-// let argv = process.argv;
-// let params = argv[2];
-// let base = Number(params.split('=')[1]);
-// console.log(base);
+console.log(argv.base, argv.limit);
 
-createFile(base).then(file => console.log(`archivo creado ${file}`))
-    .catch(e => console.log(e));
+// createFile(base).then(file => console.log(`archivo creado ${file}`))
+// .catch(e => console.log(e));
