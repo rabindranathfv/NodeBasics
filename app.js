@@ -9,6 +9,7 @@ const argv = require('yargs')
             default: 10
         }
     })
+    .help()
     .argv;
 // executara de la forma node app list -b <value>
 // const multiply = require('./multiplicar/multiply');
