@@ -5,9 +5,12 @@ const db = require('../db/data.json');
 let todoList = [];
 
 const loadDb = () => {
-    todoList = [...db];
-    console.log('ALL DB', todoList);
-    console.log('*********');
+    try {
+        todoList = [...db];
+    } catch (e) {
+        todoList = [];
+    }
+
 }
 
 
@@ -19,7 +22,7 @@ const saveDb = () => {
     });
 }
 
-const createTask = (description) => {
+const createTodo = (description) => {
     loadDb();
     let newTodo = {
         description,
@@ -30,7 +33,12 @@ const createTask = (description) => {
     return newTodo;
 };
 
+const getTodos = () => {
+    return db;
+}
+
 
 module.exports = {
-    createTask
+    createTodo,
+    getTodos
 };
