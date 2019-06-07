@@ -25,6 +25,12 @@ switch (command) {
         break;
     case 'update':
         console.log('Update a task'.blue);
+        let isUpdated = todosAPI.updateTodo(argv.description, argv.completed);
+        if (isUpdated) {
+            console.log(isUpdated);
+        } else {
+            console.log(isUpdated);
+        }
         break;
     default:
         console.log('Not an existing command'.blue);

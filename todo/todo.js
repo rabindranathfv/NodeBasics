@@ -33,6 +33,19 @@ const createTodo = (description) => {
     return newTodo;
 };
 
+const updateTodo = (description, completed) => {
+    loadDb();
+    let index = todoList.findIndex(task => task.description === description);
+    if (index >= 0) {
+        todoList[index].completed = completed;
+        saveDb();
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
 const getTodos = () => {
     return db;
 }
@@ -40,5 +53,6 @@ const getTodos = () => {
 
 module.exports = {
     createTodo,
-    getTodos
+    getTodos,
+    updateTodo
 };
