@@ -32,6 +32,14 @@ switch (command) {
             console.log(isUpdated);
         }
         break;
+    case 'delete':
+        let isDeleted = todosAPI.deleteTodo(argv.description);
+        if (isDeleted) {
+            console.log(isDeleted);
+        } else {
+            console.log(isDeleted);
+        }
+        break;
     default:
         console.log('Not an existing command'.blue);
         break;

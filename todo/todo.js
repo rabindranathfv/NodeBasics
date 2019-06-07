@@ -46,6 +46,19 @@ const updateTodo = (description, completed) => {
 
 }
 
+const deleteTodo = (description) => {
+    loadDb();
+    let index = todoList.findIndex(task => task.description === description);
+    if (index >= 0) {
+        let removed = todoList.splice(index, 1);
+        saveDb();
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
 const getTodos = () => {
     return db;
 }
@@ -54,5 +67,6 @@ const getTodos = () => {
 module.exports = {
     createTodo,
     getTodos,
-    updateTodo
+    updateTodo,
+    deleteTodo
 };

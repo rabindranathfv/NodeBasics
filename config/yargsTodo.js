@@ -27,6 +27,7 @@ const argv = require('yargs')
     .command('create', 'create a new task in todos App', optsTodo)
     .command('list', 'List all Todos App', optsTodoList)
     .command('update', 'Update a Todo Task', optsTodoUpdate)
+    .command('delete', 'delete a Todo Task', optsTodo)
     .help()
     .argv;
 
